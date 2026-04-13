@@ -1,0 +1,14 @@
+enum PackType {
+  int8(1),
+  uint8(1),
+  int16(2),
+  uint16(2),
+  int32(4),
+  uint32(4),
+  float32(4),
+  float64(8);
+
+  final int size;
+
+  const PackType(this.size);
+}
