@@ -55,6 +55,9 @@ Uint8List pack(
       case PackType.float64:
         byteData.setFloat64(offset, v, endian);
         break;
+      case PackType.boolP:
+        byteData.setUint8(offset, v ? 1 : 0);
+        break;
     }
 
     offset += f.size;
@@ -118,6 +121,10 @@ List<dynamic> unpack(
       case PackType.float64:
         result.add(data.getFloat64(offset, endian));
         offset += 8;
+        break;
+      case PackType.boolP:
+        result.add(data.getUint8(offset) != 0);
+        offset += 1;
         break;
     }
   }

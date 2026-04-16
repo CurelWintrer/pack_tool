@@ -6,7 +6,8 @@ enum PackType {
   int32(4),
   uint32(4),
   float32(4),
-  float64(8);
+  float64(8),
+  boolP(1);
 
   final int size;
 
