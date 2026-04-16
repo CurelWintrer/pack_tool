@@ -49,6 +49,12 @@ Uint8List pack(
       case PackType.uint32:
         byteData.setUint32(offset, v, endian);
         break;
+      case PackType.int64:
+        byteData.setInt64(offset, v,endian);
+        break;
+      case PackType.uint64:
+        byteData.setUint64(offset,v, endian);
+        break;
       case PackType.float32:
         byteData.setFloat32(offset, v, endian);
         break;
@@ -113,6 +119,14 @@ List<dynamic> unpack(
       case PackType.uint32:
         result.add(data.getUint32(offset, endian));
         offset += 4;
+        break;
+      case PackType.int64:
+        result.add(data.getInt64(offset,endian));
+        offset += 8;
+        break;
+      case PackType.uint64:
+        result.add(data.getUint64(offset,endian));
+        offset += 8;
         break;
       case PackType.float32:
         result.add(data.getFloat32(offset, endian));

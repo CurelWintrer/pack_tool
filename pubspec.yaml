@@ -1,6 +1,6 @@
 name: pack_tool
 description: "用于通讯协议的打包和解包，以及CRC校验"
-version: 0.0.2
+version: 0.0.3
 homepage:
 
 environment:
